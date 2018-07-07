@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team<T> {
+public class Team<T extends Player> {
 	
 	private String name;
 
@@ -34,7 +34,7 @@ public class Team<T> {
 			members.add(player);
 			
 			//casting is superfluous 
-			System.out.println(((Player) player).getName() + " just joined " + this.name);
+			System.out.println( player.getName() + " just joined " + this.name);
 			return true;
 		}
 		

@@ -23,16 +23,20 @@ public class Main {
 		Knight lance = new Knight("Lance");
 		Alchemist willow = new Alchemist("Willow");
 		
-		Team<Mage> userTeam = new Team<>("Mage's Guild");
+		Team<Mage> magesGuild = new Team<>("Mage's Guild");
 		
-		userTeam.addPlayer(poe);
-	//	userTeam.addPlayer(lance);
+		magesGuild.addPlayer(poe);
+		System.out.println("Here is mages guild size: " + magesGuild.numPlayers());	
+		
 //		userTeam.addPlayer(willow);
 		
 		Team<Knight> knightsGuild = new Team<>("Knight's Guild");
+		knightsGuild.addPlayer(lance);
 		
-		userTeam.numPlayers();
+	
 		
+		
+		//***************************************************
 		System.out.println("Welcome, what's your name?");
 		userName = scan.nextLine();
 		System.out.println("Welcome, to Goldenfalls "  + userName + ".");
