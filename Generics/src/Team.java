@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team {
+public class Team<T> {
 	
 	private String name;
 
@@ -10,7 +10,7 @@ public class Team {
 	int tied = 0;
 	int lost = 0;
 
-	private ArrayList<Player> members = new ArrayList<>();
+	private ArrayList<T> members = new ArrayList<>();
 	
 	public Team(String name) {
 		this.name = name;
@@ -25,14 +25,16 @@ public class Team {
 		this.name = name;
 	}
 	
-	public boolean addPlayer(Player player) {
+	public boolean addPlayer(T player) {
 		if(members.contains(player)) 
 		{
 			System.out.println(player + " is already on this team");
 			return false;
 		}else {
 			members.add(player);
-			System.out.println(player.getName() + " just joined " + this.name);
+			
+			//casting is superfluous 
+			System.out.println(((Player) player).getName() + " just joined " + this.name);
 			return true;
 		}
 		
