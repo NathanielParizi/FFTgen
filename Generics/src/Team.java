@@ -26,13 +26,13 @@ public class Team {
 	}
 	
 	public boolean addPlayer(Player player) {
-		if(player.equals(player)) 
+		if(members.contains(player)) 
 		{
 			System.out.println(player + " is already on this team");
 			return false;
 		}else {
 			members.add(player);
-			System.out.println(player.getName() + " just joined the team!" + this.name);
+			System.out.println(player.getName() + " just joined " + this.name);
 			return true;
 		}
 		
